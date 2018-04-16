@@ -17,8 +17,6 @@
 
 ;;; Code:
 
-(require 'haskell-mode)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Index mode
 
@@ -98,15 +96,7 @@
 (define-derived-mode stack-doc-package-mode
   text-mode "Stack-Doc-Package"
   "Package for stack doc.
- \\{stack-doc-package-mode-map}"
-  (set (make-local-variable 'font-lock-defaults)
-       '((haskell-font-lock-keywords)
-         nil nil nil nil
-         (font-lock-syntactic-face-function
-          . haskell-syntactic-face-function)
-         ;; Get help from font-lock-syntactic-keywords.
-         (parse-sexp-lookup-properties . t)
-         (font-lock-extra-managed-props . (composition)))))
+ \\{stack-doc-package-mode-map}")
 
 (defun stack-doc-open (&optional m-pkg-ver)
   (interactive)
